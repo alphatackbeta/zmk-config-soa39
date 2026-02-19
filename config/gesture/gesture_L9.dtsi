@@ -1,0 +1,16 @@
+/ {
+  zip_mouse_gesture_l9: zip_mouse_gesture_l9 {
+    compatible = "zmk,input-processor-mouse-gesture";
+
+    enable-eager-mode;
+    stroke-size = <250>;
+    movement-threshold = <6>;
+    idle-timeout-ms = <120>;
+    gesture-cooldown-ms = <120>;
+
+    prev_track { pattern = <GESTURE_LEFT>;  bindings = <&kp C_PREV>; };
+    next_track { pattern = <GESTURE_RIGHT>; bindings = <&kp C_NEXT>; };
+    vol_up     { pattern = <GESTURE_UP>;    bindings = <&kp C_VOL_UP>; };
+    vol_dn     { pattern = <GESTURE_DOWN>;  bindings = <&kp C_VOL_DN>; };
+  };
+};
