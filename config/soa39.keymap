@@ -10,7 +10,33 @@
 
 / {
     behaviors {
+        /* ---- Windows gesture helpers (must be under /behaviors) ---- */
+        win_snap_left: win_snap_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LG(LEFT)>;
+        };
+
+        win_snap_right: win_snap_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LG(RIGHT)>;
+        };
+
+        win_task_view: win_task_view {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LG(TAB)>;
+        };
+
+        win_close: win_close {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LA(F4)>;
+        };
+        /* ----------------------------------------------------------- */
     };
+
 
     combos {
         compatible = "zmk,combos";
@@ -46,45 +72,41 @@
         };
     };
 
-    macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-
-        mul_mark: mul_mark {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N5>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
-
-            label = "MUL_MARK";
-        };
-
-        div_mark: div_mark {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N7>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
-
-            label = "DIV_MARK";
-        };
-
-        /* ---- ここから追記：Windowsジェスチャ用 ---- */
-        /* ---- 追記ここまで ---- */
+macros {
+    to_layer_0: to_layer_0 {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        label = "TO_LAYER_0";
     };
+
+    mul_mark: mul_mark {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings =
+            <&macro_press>,
+            <&kp LALT>,
+            <&macro_tap>,
+            <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N5>,
+            <&macro_release>,
+            <&kp LEFT_ALT>;
+        label = "MUL_MARK";
+    };
+
+    div_mark: div_mark {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings =
+            <&macro_press>,
+            <&kp LEFT_ALT>,
+            <&macro_tap>,
+            <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N7>,
+            <&macro_release>,
+            <&kp LEFT_ALT>;
+        label = "DIV_MARK";
+    };
+};
+
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
