@@ -1,6 +1,6 @@
-#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
 
-/ {
+ / {
   zip_mouse_gesture_l8: zip_mouse_gesture_l8 {
     compatible = "zmk,input-processor-mouse-gesture";
     #input-processor-cells = <0>;
@@ -11,9 +11,9 @@
     idle-timeout-ms = <120>;
     gesture-cooldown-ms = <120>;
 
-    snap_left   { pattern = <GESTURE_LEFT>;  bindings = <&kp LGUI(LEFT)>; };
-    snap_right  { pattern = <GESTURE_RIGHT>; bindings = <&kp LGUI(RIGHT)>; };
-    task_view   { pattern = <GESTURE_UP>;    bindings = <&kp LGUI(TAB)>; };
-    close_win   { pattern = <GESTURE_DOWN>;  bindings = <&kp LA(F4)>; };
+    snap_left   { pattern = <GESTURE_LEFT>;  bindings = <&win_snap_left>; };
+    snap_right  { pattern = <GESTURE_RIGHT>; bindings = <&win_snap_right>; };
+    task_view   { pattern = <GESTURE_UP>;    bindings = <&win_task_view>; };
+    close_win   { pattern = <GESTURE_DOWN>;  bindings = <&win_close>; };
   };
 };
