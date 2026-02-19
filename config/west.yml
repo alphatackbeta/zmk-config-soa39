@@ -10,6 +10,9 @@ manifest:
       url-base: https://github.com/badjeff
     - name: iwk7273
       url-base: https://github.com/iwk7273
+    - name: kot149
+      url-base: https://github.com/kot149
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,5 +30,9 @@ manifest:
     - name: zmk-ws2812-driver
       remote: gohanda11
       revision: main
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
+
   self:
     path: config
