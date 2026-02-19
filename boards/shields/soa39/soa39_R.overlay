@@ -133,13 +133,13 @@
         force-awake;
         wakeup-source;
     };
+};
 
-    &zip_temp_layer {
-        excluded-positions = <
-            16 // J
-            17 // K
-            18 // L
-        >;
-    };
-
+/* AML: do not exit when pressing J/K/L (only these stay in AML) */
+&zip_temp_layer {
+    excluded-positions = <
+        16 // J
+        17 // K
+        18 // L
+    >;
 };
