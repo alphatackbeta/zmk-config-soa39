@@ -1,0 +1,16 @@
+/ {
+  zip_mouse_gesture_l8: zip_mouse_gesture_l8 {
+    compatible = "zmk,input-processor-mouse-gesture";
+
+    enable-eager-mode;
+    stroke-size = <250>;
+    movement-threshold = <6>;
+    idle-timeout-ms = <120>;
+    gesture-cooldown-ms = <120>;
+
+    snap_left   { pattern = <GESTURE_LEFT>;  bindings = <&kp LGUI(LEFT)>; };
+    snap_right  { pattern = <GESTURE_RIGHT>; bindings = <&kp LGUI(RIGHT)>; };
+    task_view   { pattern = <GESTURE_UP>;    bindings = <&kp LGUI(TAB)>; };
+    close_win   { pattern = <GESTURE_DOWN>;  bindings = <&kp LA(F4)>; };
+  };
+};
