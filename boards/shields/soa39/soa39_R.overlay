@@ -3,6 +3,13 @@
 #include <dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 
+/* ---- add: mouse gesture + per-layer gesture definitions ---- */
+#include <mouse-gesture.dtsi>
+#include "../../../config/gesture/gesture_L7.dtsi"
+#include "../../../config/gesture/gesture_L8.dtsi"
+#include "../../../config/gesture/gesture_L9.dtsi"
+/* ------------------------------------------------------------ */
+
 &default_transform {
     col-offset = <5>;
 };
@@ -39,6 +46,23 @@
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_scaler 2 5>;
         };
+
+        /* ---- add: gesture processors by layer (L7/L8/L9) ---- */
+        gesture_l7 {
+            layers = <7>;
+            input-processors = <&zip_mouse_gesture_l7>;
+        };
+
+        gesture_l8 {
+            layers = <8>;
+            input-processors = <&zip_mouse_gesture_l8>;
+        };
+
+        gesture_l9 {
+            layers = <9>;
+            input-processors = <&zip_mouse_gesture_l9>;
+        };
+        /* ----------------------------------------------------- */
     };
 };
 
@@ -78,7 +102,7 @@
     };
 };
 
-// Override led_strip to set red color for right side  
+// Override led_strip to set red color for right side
 &led_strip {
     status = "okay";
     chain-length = <1>;
@@ -110,4 +134,3 @@
         wakeup-source;
     };
 };
-
