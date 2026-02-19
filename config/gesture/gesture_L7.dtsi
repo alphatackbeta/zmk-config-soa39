@@ -3,6 +3,7 @@
 / {
   zip_mouse_gesture_l7: zip_mouse_gesture_l7 {
     compatible = "zmk,input-processor-mouse-gesture";
+    #input-processor-cells = <0>;
 
     enable-eager-mode;
     stroke-size = <250>;
