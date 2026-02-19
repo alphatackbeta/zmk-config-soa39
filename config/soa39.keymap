@@ -44,11 +44,6 @@
             bindings = <&lt 8 LA(TAB)>;
             key-positions = <8 9>;
         };
-
-        jk_check {
-            bindings = <&kp AT>;
-            key-positions = <16 17>;
-        };
     };
 
     macros {
