@@ -45,9 +45,9 @@
             key-positions = <8 9>;
         };
 
-        test {
+        jk_check {
             bindings = <&kp AT>;
-            key-positions = <17 16>;
+            key-positions = <16 17>;
         };
     };
 
