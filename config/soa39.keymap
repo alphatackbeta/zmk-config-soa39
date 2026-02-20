@@ -9,35 +9,6 @@
 };
 
 / {
-    behaviors {
-        /* ---- Windows gesture helpers (must be under /behaviors) ---- */
-        win_snap_left: win_snap_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LG(LEFT)>;
-        };
-
-        win_snap_right: win_snap_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LG(RIGHT)>;
-        };
-
-        win_task_view: win_task_view {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LG(TAB)>;
-        };
-
-        win_close: win_close {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LA(F4)>;
-        };
-        /* ----------------------------------------------------------- */
-    };
-
-
     combos {
         compatible = "zmk,combos";
 
