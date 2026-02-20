@@ -1,6 +1,33 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
- / {
+/ {
+  behaviors {
+    win_snap_left: win_snap_left {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LG(LEFT)>;
+    };
+
+    win_snap_right: win_snap_right {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LG(RIGHT)>;
+    };
+
+    win_task_view: win_task_view {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LG(TAB)>;
+    };
+
+    win_close: win_close {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LA(F4)>;
+    };
+  };
+
   zip_mouse_gesture_l8: zip_mouse_gesture_l8 {
     compatible = "zmk,input-processor-mouse-gesture";
     #input-processor-cells = <0>;
